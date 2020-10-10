@@ -13,7 +13,7 @@ class FactoryViewModel(private val context: Context) : ViewModelProvider.Factory
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DisplayFetchedDataViewModel::class.java)) {
             val db = Room.databaseBuilder(context, FlickerDataBase::class.java, GlobalConstants.dataBaseName).build()
-            return DisplayFetchedDataViewModel(db, context) as T
+            return DisplayFetchedDataViewModel(db) as T
         }
         throw IllegalArgumentException("ViewModel does not exist")
     }

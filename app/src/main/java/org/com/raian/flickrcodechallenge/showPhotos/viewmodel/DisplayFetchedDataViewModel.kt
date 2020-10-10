@@ -1,10 +1,12 @@
 package org.com.raian.flickrcodechallenge.showPhotos.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.flickrKey
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.formatValue
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.methodValue
@@ -23,7 +25,7 @@ import retrofit2.Retrofit
 import java.util.logging.Logger
 import javax.inject.Inject
 
-class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Context) :
+class DisplayFetchedDataViewModel(private val db: FlickerDataBase) :
     BaseViewModel() {
 
     private val listOfDataForUI by lazy {
@@ -65,7 +67,7 @@ class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Cont
         val queryMap = mutableMapOf(
             "method" to methodValue,
             "api_key" to flickrKey,
-            " format" to formatValue,
+            "format" to formatValue,
             "nojsoncallback" to noJsonCallbackValue,
             "safe_search" to safeSearchValue,
             "text" to query
