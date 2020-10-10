@@ -1,4 +1,4 @@
-package org.com.raian.flickrcodechallenge.ui.activities
+package org.com.raian.flickrcodechallenge.showPhotos.activities
 
 import android.content.IntentFilter
 import android.net.ConnectivityManager
@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import org.com.raian.flickrcodechallenge.R
-import org.com.raian.flickrcodechallenge.ui.viewmodel.DisplayFetchedDataViewModel
-import org.com.raian.flickrcodechallenge.ui.viewmodel.FactoryViewModel
+import org.com.raian.flickrcodechallenge.showPhotos.viewmodel.DisplayFetchedDataViewModel
+import org.com.raian.flickrcodechallenge.ui.factories.FactoryViewModel
 import org.com.raian.flickrcodechallenge.util.NetworkReceiver
 import java.util.logging.Logger
 

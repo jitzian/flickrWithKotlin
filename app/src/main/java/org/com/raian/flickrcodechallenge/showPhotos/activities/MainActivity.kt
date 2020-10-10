@@ -1,4 +1,4 @@
-package org.com.raian.flickrcodechallenge.ui.activities
+package org.com.raian.flickrcodechallenge.showPhotos.activities
 
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.com.raian.flickrcodechallenge.R
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.totalOfColumns
-import org.com.raian.flickrcodechallenge.ui.adapter.RVCustomAdapter
+import org.com.raian.flickrcodechallenge.showPhotos.adapter.RVCustomAdapter
 import org.com.raian.flickrcodechallenge.util.NetworkReceiver
 import java.util.logging.Logger
 

@@ -1,4 +1,4 @@
-package org.com.raian.flickrcodechallenge.ui.viewmodel
+package org.com.raian.flickrcodechallenge.showPhotos.viewmodel
 
 import androidx.lifecycle.ViewModel
 import java.util.logging.Logger

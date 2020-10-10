@@ -1,16 +1,17 @@
-package org.com.raian.flickrcodechallenge.ui.viewmodel
+package org.com.raian.flickrcodechallenge.showPhotos.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.flickrKey
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.formatValue
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.methodValue
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.noJsonCallbackValue
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.safeSearchValue
-import org.com.raian.flickrcodechallenge.repository.database.FlickerDataBase
-import org.com.raian.flickrcodechallenge.repository.database.model.FlickerDataClass
+import org.com.raian.flickrcodechallenge.database.FlickerDataBase
+import org.com.raian.flickrcodechallenge.database.model.FlickerDataClass
 import org.com.raian.flickrcodechallenge.dependency.injection.components.DaggerComponentInjector
 import org.com.raian.flickrcodechallenge.dependency.injection.modules.NetworkModule
 import org.com.raian.flickrcodechallenge.rest.RestApi
@@ -22,7 +23,8 @@ import retrofit2.Retrofit
 import java.util.logging.Logger
 import javax.inject.Inject
 
-class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Context) : BaseViewModel() {
+class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Context) :
+    BaseViewModel() {
 
     private val listOfDataForUI by lazy {
         MutableLiveData<List<FlickerDataClass>>()
@@ -51,16 +53,14 @@ class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Cont
         GlobalScope.launch(Dispatchers.IO) {
             if (!input.isNullOrEmpty()) {
                 clearLocalData()
-                input.let {
-                    prepareRemoteData(it)
-                }
+                prepareRemoteData(input)
             } else {
                 getStoredDataForUI()
             }
         }
     }
 
-    private fun prepareRemoteData(query: String) = GlobalScope.launch(Dispatchers.IO) {
+    private fun prepareRemoteData(query: String) = viewModelScope.launch(Dispatchers.IO) {
         //Buidling URL
         val queryMap = mutableMapOf(
             "method" to methodValue,
@@ -77,7 +77,10 @@ class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Cont
                     logger.severe("$TAG::prepareRemoteData::onFailure::${t.message}::${t.cause}")
                 }
 
-                override fun onResponse(call: Call<FlickrResultApi>, response: Response<FlickrResultApi>) {
+                override fun onResponse(
+                    call: Call<FlickrResultApi>,
+                    response: Response<FlickrResultApi>
+                ) {
                     insertDataIntoDb(response)
                 }
             })
@@ -85,35 +88,36 @@ class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Cont
         deferredDataFetchedResult.await()
     }
 
-    private fun insertDataIntoDb(response: Response<FlickrResultApi>) = GlobalScope.launch {
-        withContext(Dispatchers.IO) {
-            response.body()?.photos?.photo?.let {
-                for (i in it) {
-                    with(i) {
-                        val innerFlickerDataClass = FlickerDataClass(
-                            id?.toLong(),
-                            owner,
-                            secret,
-                            server,
-                            farm,
-                            title,
-                            ispublic.toString(),
-                            isfriend,
-                            isfamily
-                        )
-                        db.flickerDao().insert(innerFlickerDataClass)
-                    }
+    private fun insertDataIntoDb(response: Response<FlickrResultApi>) = viewModelScope.launch (Dispatchers.IO){
+//        withContext(Dispatchers.IO) {
+        response.body()?.photos?.photo?.let {
+            for (i in it) {
+                with(i) {
+                    val innerFlickerDataClass = FlickerDataClass(
+                        id?.toLong(),
+                        owner,
+                        secret,
+                        server,
+                        farm,
+                        title,
+                        ispublic.toString(),
+                        isfriend,
+                        isfamily
+                    )
+                    db.flickerDao().insert(innerFlickerDataClass)
                 }
             }
-            listOfDataForUI.postValue(db.flickerDao().getAll())
         }
+        listOfDataForUI.postValue(db.flickerDao().getAll())
+//        }
     }
 
-    private fun getStoredDataForUI() = GlobalScope.launch(Dispatchers.IO) {
+    //    private fun getStoredDataForUI() = GlobalScope.launch(Dispatchers.IO) {
+    private fun getStoredDataForUI() = viewModelScope.launch(Dispatchers.IO) {
         listOfDataForUI.postValue(db.flickerDao().getAll())
     }
 
-    private fun clearLocalData() = GlobalScope.launch(Dispatchers.IO) {
+    private fun clearLocalData() = viewModelScope.launch(Dispatchers.IO) {
         db.flickerDao().deleteAll()
     }
 

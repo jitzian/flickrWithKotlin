@@ -1,10 +1,10 @@
-package org.com.raian.flickrcodechallenge.repository.database.dao
+package org.com.raian.flickrcodechallenge.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import org.com.raian.flickrcodechallenge.repository.database.model.FlickerDataClass
+import org.com.raian.flickrcodechallenge.database.model.FlickerDataClass
 
 @Dao
 interface FlickerDao {

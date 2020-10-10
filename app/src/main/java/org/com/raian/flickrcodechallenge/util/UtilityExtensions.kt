@@ -1,6 +1,6 @@
 package org.com.raian.flickrcodechallenge.util
 
-import org.com.raian.flickrcodechallenge.repository.database.model.FlickerDataClass
+import org.com.raian.flickrcodechallenge.database.model.FlickerDataClass
 
 //Build URL according to documentation
 fun prepareUrl(flickerDataClass: FlickerDataClass) =

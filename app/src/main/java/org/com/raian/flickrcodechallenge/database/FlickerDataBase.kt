@@ -1,10 +1,10 @@
-package org.com.raian.flickrcodechallenge.repository.database
+package org.com.raian.flickrcodechallenge.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import org.com.raian.flickrcodechallenge.constans.GlobalConstants.Companion.dataBaseVersion
-import org.com.raian.flickrcodechallenge.repository.database.dao.FlickerDao
-import org.com.raian.flickrcodechallenge.repository.database.model.FlickerDataClass
+import org.com.raian.flickrcodechallenge.database.dao.FlickerDao
+import org.com.raian.flickrcodechallenge.database.model.FlickerDataClass
 
 @Database(
     entities = [FlickerDataClass::class],

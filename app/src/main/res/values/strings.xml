@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FlickrCodeChallenge</string>
+    <string name="NoConnectivityMessage">There is no Connectivity</string>
+    <string name="searchHint">Type your search</string>
+</resources>

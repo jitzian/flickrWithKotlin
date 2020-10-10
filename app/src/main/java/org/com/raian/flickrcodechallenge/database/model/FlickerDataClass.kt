@@ -1,4 +1,4 @@
-package org.com.raian.flickrcodechallenge.repository.database.model
+package org.com.raian.flickrcodechallenge.database.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
