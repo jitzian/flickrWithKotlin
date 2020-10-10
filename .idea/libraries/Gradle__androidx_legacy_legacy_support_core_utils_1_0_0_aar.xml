@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.legacy:legacy-support-core-utils:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3cba55aa2b5d1eee42786e330fb96ba/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d18f088b63e31383504f283ecb9c003f/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/773ae974f8d077ff65bd2c9629ff3a89/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/37da22bcbc08fda158f4595d480336ab/legacy-support-core-utils-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/95e47712445393243a2984852b20936f/legacy-support-core-utils-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/53621dcfdf6778f889f74d1c20dfaa17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20e2582e88a7605ac4ba06b4dc028d7c/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/404c784be76f1afbd065bf0d2032c3b6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c09bc7dec8e6ba8bcb40a962a82921f1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c09bc7dec8e6ba8bcb40a962a82921f1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c09bc7dec8e6ba8bcb40a962a82921f1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.legacy/legacy-support-core-utils/1.0.0/46c37f178088153618cfb0afef08ec96c48f93cb/legacy-support-core-utils-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

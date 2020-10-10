@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.test.espresso:espresso-idling-resource:3.1.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/029e11c4bb9ecdd8a1c895bda5ab847b/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09f0bc8a42155cf6cbacdf97b02ff2c7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59a3ee17e7da5e9f0739b6b314ebab34/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7ef22105f0380e88caf9ef605f0cd288/espresso-idling-resource-3.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b3d7e7981c1fc1d9e2b79f0db3d9928d/espresso-idling-resource-3.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6cbca6516346407bc848b596363039a8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/899a7975ba66e750dbc6131d2ca05995/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38cb2479b7c0427c8f47eb994bac45db/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5a782b6225bc8d56eed9085b2a38a42/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5a782b6225bc8d56eed9085b2a38a42/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5a782b6225bc8d56eed9085b2a38a42/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.espresso/espresso-idling-resource/3.1.1/ac774bb29e6171578dc7508bf390a4a3ccbedfea/espresso-idling-resource-3.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.espresso/espresso-idling-resource/3.1.1/6b93a1dc5092a6ba83bd705e48d62c84547e4479/espresso-idling-resource-3.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

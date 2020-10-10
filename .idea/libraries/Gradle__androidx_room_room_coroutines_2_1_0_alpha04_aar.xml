@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.room:room-coroutines:2.1.0-alpha04@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/757f1acee14cefc83e47785f6eb7b63a/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf2c0ceef883b751c84f1363304bf8a4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd3b2a40f4243dcfed8c1b194ef90149/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd3b2a40f4243dcfed8c1b194ef90149/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd3b2a40f4243dcfed8c1b194ef90149/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.room/room-coroutines/2.1.0-alpha04/17f9dc77aed6e1f02f149c6e7ee6a87dd0614b71/room-coroutines-2.1.0-alpha04-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
