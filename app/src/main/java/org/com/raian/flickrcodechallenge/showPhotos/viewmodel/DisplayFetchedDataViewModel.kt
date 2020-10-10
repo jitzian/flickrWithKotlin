@@ -88,31 +88,29 @@ class DisplayFetchedDataViewModel(private val db: FlickerDataBase, context: Cont
         deferredDataFetchedResult.await()
     }
 
-    private fun insertDataIntoDb(response: Response<FlickrResultApi>) = viewModelScope.launch (Dispatchers.IO){
-//        withContext(Dispatchers.IO) {
-        response.body()?.photos?.photo?.let {
-            for (i in it) {
-                with(i) {
-                    val innerFlickerDataClass = FlickerDataClass(
-                        id?.toLong(),
-                        owner,
-                        secret,
-                        server,
-                        farm,
-                        title,
-                        ispublic.toString(),
-                        isfriend,
-                        isfamily
-                    )
-                    db.flickerDao().insert(innerFlickerDataClass)
+    private fun insertDataIntoDb(response: Response<FlickrResultApi>) =
+        viewModelScope.launch(Dispatchers.IO) {
+            response.body()?.photos?.photo?.let {
+                for (i in it) {
+                    with(i) {
+                        val innerFlickerDataClass = FlickerDataClass(
+                            id?.toLong(),
+                            owner,
+                            secret,
+                            server,
+                            farm,
+                            title,
+                            ispublic.toString(),
+                            isfriend,
+                            isfamily
+                        )
+                        db.flickerDao().insert(innerFlickerDataClass)
+                    }
                 }
             }
+            listOfDataForUI.postValue(db.flickerDao().getAll())
         }
-        listOfDataForUI.postValue(db.flickerDao().getAll())
-//        }
-    }
 
-    //    private fun getStoredDataForUI() = GlobalScope.launch(Dispatchers.IO) {
     private fun getStoredDataForUI() = viewModelScope.launch(Dispatchers.IO) {
         listOfDataForUI.postValue(db.flickerDao().getAll())
     }

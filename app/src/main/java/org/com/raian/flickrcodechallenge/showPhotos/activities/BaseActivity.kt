@@ -3,7 +3,7 @@ package org.com.raian.flickrcodechallenge.showPhotos.activities
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import org.com.raian.flickrcodechallenge.R
 import org.com.raian.flickrcodechallenge.showPhotos.viewmodel.DisplayFetchedDataViewModel
@@ -18,7 +18,8 @@ abstract class BaseActivity : AppCompatActivity(), NetworkReceiver.NetworkListen
     private lateinit var networkReceiver: NetworkReceiver
 
     internal val displayFetchedDataViewModel by lazy {
-        ViewModelProviders.of(this, FactoryViewModel(this)).get(DisplayFetchedDataViewModel::class.java)
+        ViewModelProvider(this, FactoryViewModel(this))
+            .get(DisplayFetchedDataViewModel::class.java)
     }
 
     override fun onStart() {
